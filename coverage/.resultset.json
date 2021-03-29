@@ -1,16 +1,28 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/unit/listings_spec.rb": {
+      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/listings_spec.rb": {
         "lines": [
           1,
           null,
           1,
-          0,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
           null,
           null,
           null,
-          0,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
           null,
           null
         ]
@@ -18,10 +30,45 @@
       "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/lib/listings.rb": {
         "lines": [
           1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1617029002
+    "timestamp": 1617035950
   }
 }
