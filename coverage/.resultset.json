@@ -1,0 +1,27 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/unit/listings_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/lib/listings.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1617029002
+  }
+}
