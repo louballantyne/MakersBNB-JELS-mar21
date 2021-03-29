@@ -9,4 +9,6 @@ def reset_table
                   bathrooms, description, type, user_id) 
                   VALUES ('poshhouse', 'United Kingdom', 'London', '6', '4', '3', 
                   'blah blah posh house blah blaaah', 'small castle', '1')")
+  connection.exec("INSERT INTO availability (listing_id, dates) VALUES('1','2021-04-03');")
 end 
+
