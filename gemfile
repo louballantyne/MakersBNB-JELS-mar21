@@ -1,0 +1,19 @@
+source: 'https://rubygems.org'
+
+ruby '2.6.6'
+
+group :development do
+  'sinatra'
+  'pg'
+  'bcrypt'
+  'capybara', '>= 3.35.3'
+  'sinatra-flash'
+  'uri'
+end
+
+group :test do
+  'rspec'
+  'rubocop', '0.79.0'
+  'simplecov', '~> 0.12.0'
+  'simplecov-console', require: false
+end
