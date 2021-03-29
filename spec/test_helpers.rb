@@ -10,5 +10,6 @@ def reset_table
                   VALUES ('poshhouse', 'United Kingdom', 'London', '6', '4', '3', 
                   'blah blah posh house blah blaaah', 'small castle', '1')")
   connection.exec("INSERT INTO availability (listing_id, dates) VALUES('1','2021-04-03');")
+  connection.exec("INSERT INTO comments (listing_id, user_id, comment) VALUES ('1', '1', 'What an amazing castle!');")
 end 
 
