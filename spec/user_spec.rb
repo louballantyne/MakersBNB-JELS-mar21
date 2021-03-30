@@ -33,4 +33,13 @@ describe User do
       expect(find_user.name).to eq 'Isabel Stephenson'
     end 
   end 
+
+  describe '.sign_in' do
+    it 'allows existing user to sign in' do
+      new_user = User.create(username: 'poshhouseperson', email: 'poshhouseperson@notadomain.com', password: 'password1', name: 'Isabel Stephenson')
+      signed_in_user = User.sign_in('poshhouseperson', 'password1')
+
+      expect(signed_in_user.user_id).to eq new_user.user_id
+    end
+  end
 end
