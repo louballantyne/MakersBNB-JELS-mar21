@@ -135,7 +135,18 @@
       },
       "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/features/feature_sign_up_spec.rb": {
         "lines": [
-
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
         ]
       },
       "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/listings_spec.rb": {
@@ -320,6 +331,6 @@
         ]
       }
     },
-    "timestamp": 1617110951
+    "timestamp": 1617111578
   }
 }
