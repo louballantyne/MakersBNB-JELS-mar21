@@ -24,4 +24,13 @@ describe User do
       User.create(username: 'poshhouseperson', email: 'poshhouseperson@notadomain.com', password: 'password1', name: 'Isabel Stephenson')
     end
   end
+
+  describe '.find' do 
+    it 'can find a user per id' do 
+      find_user = User.find('1')
+
+      expect(find_user).to be_a User
+      expect(find_user.name).to eq 'Isabel Stephenson'
+    end 
+  end 
 end

@@ -19,4 +19,21 @@ describe Listing do
       expect(new_listing.name).to eq 'shitty appartment'
     end 
   end 
+
+  describe '.find' do 
+    it 'can find the right listing per given id' do 
+      find_listing = Listing.find('1')
+
+      expect(find_listing).to be_a Listing
+      expect(find_listing.name).to eq('poshhouse')
+    end 
+  end 
+
+  describe '.edit' do 
+    it 'can edit a listing' do 
+      edited = Listing.edit(listing_id: '1', name: 'poshhouse', country: 'United Kingdom', city: 'London', sleeps: '6', bedrooms: '4', bathrooms: '3', description: 'something more sensible', type: 'house')
+
+      expect(edited.description).to eq 'something more sensible'
+    end 
+  end 
 end
