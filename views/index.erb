@@ -1,1 +1,6 @@
-Hello world
+<% Listing.all.each do |listing| %>
+<%=listing.name %><br><
+<%=listing.city %>, <%=listing.country %><br>
+<%=listing.type %>Sleeps <%=listing.sleeps %>, <%=listing.bedrooms %> bedrooms, <%=listing.bathrooms %> bathrooms.<br>
+<%=listing.description %>
+<% end %>
