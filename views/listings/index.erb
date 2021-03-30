@@ -1,0 +1,16 @@
+<body>
+  <form action='/users/new' method='get'>
+    <input type='submit' value='Sign up'>
+  </form>
+  <form action='/session/new'>
+    <input type='submit' value='Sign in'>
+  </form>
+
+  <% Listing.all.each do |listing| %>
+    <%=listing.name %><br><
+    <%=listing.city %>, <%=listing.country %><br>
+    <%=listing.type %>Sleeps <%=listing.sleeps %>, <%=listing.bedrooms %> bedrooms, <%=listing.bathrooms %> bathrooms.<br>
+    <%=listing.description %>
+  <% end %>
+
+</body>
