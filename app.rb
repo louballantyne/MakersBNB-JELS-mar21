@@ -5,7 +5,7 @@ class MakersBnb < Sinatra::Base
   enable :sessions
 
   get '/' do
-    erb(:'/listings/index')  
+    erb(:'/listings/index')
   end
 
   get '/listings' do
@@ -19,9 +19,9 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/users/new' do
-    user = User.create(username: params[:username], email: params[:email], 
+    @user = User.create(username: params[:username], email: params[:email],
                 password: params[:password], name: params[:name])
-    session[user_id] = user.user_id
+    session[user_id] = @user.user_id
     redirect('/listings/index')
   end
 
@@ -45,8 +45,8 @@ class MakersBnb < Sinatra::Base
 
   post '/listing/new' do
     Listing.create(name: params[:name], country: params[:country], city: params[:city],
-                   sleeps: params[:sleeps], bedrooms: params[:bedrooms], 
-                   bathrooms: params[:bathrooms], description: params[:description], 
+                   sleeps: params[:sleeps], bedrooms: params[:bedrooms],
+                   bathrooms: params[:bathrooms], description: params[:description],
                    type: params[:type], user_id: params[:user_id])
     redirect('/listing/:id')
   end
