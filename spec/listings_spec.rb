@@ -28,4 +28,12 @@ describe Listing do
       expect(find_listing.name).to eq('poshhouse')
     end 
   end 
+
+  describe '.edit' do 
+    it 'can edit a listing' do 
+      edited = Listing.edit(listing_id: '1', name: 'poshhouse', country: 'United Kingdom', city: 'London', sleeps: '6', bedrooms: '4', bathrooms: '3', description: 'something more sensible', type: 'house')
+
+      expect(edited.description).to eq 'something more sensible'
+    end 
+  end 
 end

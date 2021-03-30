@@ -40,6 +40,15 @@ class Listing
     Listing.new(listing_id: result[0]['listing_id'], name: result[0]['name'], country: result[0]['country'], city: result[0]['city'],
     sleeps: result[0]['sleeps'], bedrooms: result[0]['bedrooms'], bathrooms: result[0]['bathrooms'],
     description: result[0]['description'], type: result[0]['type'], user_id: result[0]['user_id']) 
+  end
 
+  def self.edit(listing_id:, name:, country:, city:, sleeps:, bedrooms:, bathrooms:, description:, type:)
+    result = DatabaseConnection.query("UPDATE listings SET name = '#{name}', country = '#{country}', city = '#{city}', sleeps = '#{sleeps}', 
+    bedrooms = '#{bedrooms}', bathrooms = '#{bathrooms}', description = '#{description}', type = '#{type}' WHERE listing_id = '#{listing_id}' 
+    RETURNING listing_id, name, country, city, sleeps, bedrooms, bathrooms, description, type, user_id;")
+
+    Listing.new(listing_id: result[0]['listing_id'], name: result[0]['name'], country: result[0]['country'], city: result[0]['city'],
+    sleeps: result[0]['sleeps'], bedrooms: result[0]['bedrooms'], bathrooms: result[0]['bathrooms'],
+    description: result[0]['description'], type: result[0]['type'], user_id: result[0]['user_id']) 
   end
 end
