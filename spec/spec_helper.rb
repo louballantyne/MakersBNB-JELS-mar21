@@ -7,9 +7,9 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'pg'
-# require './app'
+require './app'
 
-# Capybara.app = MakersBnb
+Capybara.app = MakersBnb
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
