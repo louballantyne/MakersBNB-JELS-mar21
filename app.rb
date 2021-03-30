@@ -1,8 +1,18 @@
 require 'sinatra'
+require './lib/database_connection'
+require './lib/database_connection_setup'
+require './lib/user'
+require './lib/listings'
+require './lib/comment'
+require './lib/availability'
 
 class MakersBnb < Sinatra::Base
 
   enable :sessions
+
+  before do 
+    check_env
+  end
 
   get '/' do
     erb(:'/listings/index')  
@@ -44,11 +54,15 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/listing/new' do
-    Listing.create(name: params[:name], country: params[:country], city: params[:city],
+    listing = Listing.create(name: params[:name], country: params[:country], city: params[:city],
                    sleeps: params[:sleeps], bedrooms: params[:bedrooms], 
                    bathrooms: params[:bathrooms], description: params[:description], 
                    type: params[:type], user_id: params[:user_id])
-    redirect('/listing/:id')
+    redirect("/listing/#{listing.listing_id}")
+  end
+
+  get '/listing/:id/edit' do
+   # erb(:'/listing/:id/edit')
   end
 
   run! if app_file == $0
