@@ -109,6 +109,35 @@
           null
         ]
       },
+      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/features/feature_show_listings_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/features/feature_sign_up_spec.rb": {
+        "lines": [
+
+        ]
+      },
       "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/listings_spec.rb": {
         "lines": [
           1,
@@ -161,22 +190,22 @@
           1,
           null,
           1,
-          4,
-          4,
-          4,
-          4,
-          4,
-          4,
-          4,
-          4,
-          4,
-          4,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
           null,
           null,
           1,
-          1,
-          1,
-          1,
+          4,
+          4,
+          4,
           null,
           null,
           null,
@@ -291,6 +320,6 @@
         ]
       }
     },
-    "timestamp": 1617102177
+    "timestamp": 1617110951
   }
 }

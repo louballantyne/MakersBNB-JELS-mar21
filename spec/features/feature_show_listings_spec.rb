@@ -9,12 +9,12 @@ end
 feature 'Sign up' do
   scenario "it has a link to sign up if the user isn't signed in" do
     visit '/'
-    expect(page).to have_link('Sign up', href: "/users/new")
+    expect(page).to have_button 'Sign up'
   end
 end
 feature 'Sign in' do
   scenario "it has a link to sign in if the user isn't signed in" do
     visit '/'
-    expect(page).to have_link('Sign in', href: "/session/new")
+    expect(page).to have_button 'Sign in'
   end
 end
