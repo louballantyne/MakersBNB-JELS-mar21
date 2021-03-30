@@ -19,6 +19,10 @@ class MakersBnb < Sinatra::Base
     erb(:'/listings/index')
   end
 
+  get '/listings/index' do
+    erb(:'/listings/index')
+  end
+
   get '/listings' do
     @listings = Listing.all
     erb(:'/listings/index')
