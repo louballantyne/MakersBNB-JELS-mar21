@@ -8,10 +8,11 @@ require './lib/availability'
 
 class MakersBnb < Sinatra::Base
 
-  enable :sessions
+  enable :sessions , :method_override
 
   before do 
     check_env
+    @user = session[user_id]
   end
 
   get '/' do
@@ -20,7 +21,6 @@ class MakersBnb < Sinatra::Base
 
   get '/listings' do
     @listings = Listing.all
-    @user = session[user_id]
     erb(:'/listings/index')
   end
 
@@ -40,13 +40,14 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/session/new' do
-    session[user_id] = user.user_id
     # user = User.sign_in(username: params[:username], password: params[:password])
+    session[user_id] = user.user_id
     redirect('/listings/index')
   end
 
   get '/listing/:id' do
-    erb(:'/listing/index')
+    @listing = Listing.find(params[:id])
+    erb(:"/listing/index")
   end
 
   get '/listing/new' do
@@ -62,7 +63,16 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/listing/:id/edit' do
-   # erb(:'/listing/:id/edit')
+    @listing = Listing.find(params[:id])
+    erb(:"/listing/edit")
+  end
+
+  patch '/listing/:id' do
+    @listing = Listing.edit(listing_id: params[:id], name: params[:name], country: params[:country], 
+                            city: params[:city], sleeps: params[:sleep], bedrooms: params[:bedrooms], 
+                            bathrooms: params[:bathrooms], description: params[:description], 
+                            type: params[:type])
+    redirect("/listing/#{@listing.listing_id}")
   end
 
   run! if app_file == $0
