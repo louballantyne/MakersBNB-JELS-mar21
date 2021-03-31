@@ -38,7 +38,10 @@ class User
 
   def self.sign_in(username:, password:)
     result = DatabaseConnection.query("SELECT * FROM users WHERE username = '#{username}';")
-    return unless result.any?
+    # Return code 1 if username doesn't exist
+    return 1 unless result.any?
+    # Return code 2 if password is incorrect
+    return 2 unless BCrypt::Password.new(result[0]['password']) == password
 
     User.new(user_id: result[0]['user_id'], username: result[0]['username'],
       email: result[0]['email'], password: result[0]['password'], name: result[0]['name'])

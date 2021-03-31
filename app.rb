@@ -45,8 +45,15 @@ class MakersBnb < Sinatra::Base
 
   post '/session/new' do
     user = User.sign_in(username: params[:username], password: params[:password])
-    session[:user_id] = user.user_id
-    redirect('/')
+    if user == 1
+      flash[:username_warning] = "Please check your username"
+    elsif user == 2
+      flash[:password_warning] = "Please check your password"
+    else
+      session[:user_id] = user.user_id
+      redirect('/')
+    end
+    redirect('/session/new')
   end
 
   get '/listing/:id' do
