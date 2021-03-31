@@ -3,7 +3,7 @@ require 'sinatra/flash'
 require './lib/database_connection'
 require './lib/database_connection_setup'
 require './lib/user'
-require './lib/listings'
+require './lib/listing'
 require './lib/message'
 require './lib/availability'
 
