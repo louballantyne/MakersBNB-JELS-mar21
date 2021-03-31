@@ -20,9 +20,13 @@ feature 'edit' do
         click_on 'Submit'
         click_on 'Edit'
 
-        expect(page).to have_content ''
-
-        
+        expect(page).to have_content 'Name'
+        expect(page).to have_content 'Sleeps'
+        expect(page).to have_content 'Bedrooms'
+        expect(page).to have_content 'Bathrooms'
+        expect(page).to have_content 'Description'
+        expect(page).to have_content 'Type'
+        expect(page).to have_content 'Submit'
     end
 
 end
