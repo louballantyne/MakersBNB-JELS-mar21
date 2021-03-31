@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sinatra/flash'
 require './lib/database_connection'
 require './lib/database_connection_setup'
 require './lib/user'
@@ -9,10 +10,11 @@ require './lib/availability'
 class MakersBnb < Sinatra::Base
 
   enable :sessions , :method_override
+  register Sinatra::Flash
 
-  before do 
+  before do
     check_env
-    @user = session[:user_id]
+    @user = User.find(session[:user_id])
   end
 
   get '/' do
@@ -21,6 +23,7 @@ class MakersBnb < Sinatra::Base
 
 
   get '/listings' do
+    @user = User.find(session[:user_id])
     @listings = Listing.all
     erb(:'/listings/index')
   end
@@ -30,9 +33,9 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/users/new' do
-    @user = User.create(username: params[:username], email: params[:email],
+    user = User.create(username: params[:username], email: params[:email],
                 password: params[:password], name: params[:name])
-    session[:user_id] = @user.user_id
+    session[:user_id] = user.user_id
     redirect('/')
   end
 
@@ -41,7 +44,7 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/session/new' do
-    # user = User.sign_in(username: params[:username], password: params[:password])
+    user = User.sign_in(username: params[:username], password: params[:password])
     session[:user_id] = user.user_id
     redirect('/')
   end
@@ -69,9 +72,9 @@ class MakersBnb < Sinatra::Base
   end
 
   patch '/listing/:id' do
-    @listing = Listing.edit(listing_id: params[:id], name: params[:name], country: params[:country], 
-                            city: params[:city], sleeps: params[:sleep], bedrooms: params[:bedrooms], 
-                            bathrooms: params[:bathrooms], description: params[:description], 
+    @listing = Listing.edit(listing_id: params[:id], name: params[:name], country: params[:country],
+                            city: params[:city], sleeps: params[:sleep], bedrooms: params[:bedrooms],
+                            bathrooms: params[:bathrooms], description: params[:description],
                             type: params[:type])
     redirect("/listing/#{@listing.listing_id}")
   end
