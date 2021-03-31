@@ -13,6 +13,7 @@ CREATE TABLE listings (listing_id SERIAL PRIMARY KEY,
                        bathrooms INTEGER, 
                        description VARCHAR(250), 
                        type VARCHAR(20), 
+                       price DECIMAL(5,2),
                        user_id INTEGER, 
                        FOREIGN KEY(user_id) REFERENCES users (user_id) 
                        ON DELETE CASCADE);
@@ -23,11 +24,26 @@ CREATE TABLE availability (id SERIAL PRIMARY KEY,
                            FOREIGN KEY(listing_id) REFERENCES listings (listing_id) 
                            ON DELETE CASCADE);
 
-CREATE TABLE comments (comment_id SERIAL PRIMARY KEY, 
+CREATE TABLE message (message_id SERIAL PRIMARY KEY, 
                       listing_id INTEGER, 
                        user_id INTEGER, 
-                       comment VARCHAR(250), 
+                       message VARCHAR(250), 
                        timestamp TIMESTAMP, 
                        FOREIGN KEY(listing_id) REFERENCES listings (listing_id), 
                        FOREIGN KEY(user_id) REFERENCES users (user_id) 
                        ON DELETE CASCADE);
+
+CREATE TABLE bookings (booking_id SERIAL PRIMARY KEY,
+                        listing_id INTEGER,
+                        user_id INTEGER,
+                        date_from DATE,
+                        date_end DATE,
+                        price DECIMAL(5,2),
+                        FOREIGN KEY(listing_id) REFERENCES listings (listing_id),
+                        FOREIGN KEY(user_id) REFERENCES users (user_id)
+                        ON DELETE CASCADE);
+
+CREATE TABLE rating (rating_id SERIAL PRIMARY KEY,
+                      booking_id INTEGER,
+                      review VARCHAR(60),
+                      FOREIGN KEY(booking_id) REFERENCES bookings (booking_id))
