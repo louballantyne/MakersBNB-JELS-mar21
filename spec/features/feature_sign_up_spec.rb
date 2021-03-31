@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'sign up' do
   scenario 'A user can sign up' do
     visit '/'
@@ -13,7 +15,7 @@ feature 'sign up' do
   scenario 'A user will see their name, sign out and add listing after they create an account' do
     visit '/'
     click_on 'Sign up'
-# FIRST NAME IS RENAMED TO NAME TEMPORARILY
+    # FIRST NAME IS RENAMED TO NAME TEMPORARILY
     fill_in('first_name', with: 'Theodore')
     fill_in('last_name', with: 'Humpernickle')
     fill_in('username', with: 'ttotheh')

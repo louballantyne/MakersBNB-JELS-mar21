@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'delete listing' do
   scenario 'If a user owns a listing they can choose to delete it' do
     visit '/'

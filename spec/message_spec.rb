@@ -1,11 +1,13 @@
-require 'message' 
+# frozen_string_literal: true
 
-describe Message do 
-  describe '.all' do 
+require 'message'
+
+describe Message do
+  describe '.all' do
     it 'returns a list of all messages' do
-      message = Message.all 
-      
-      expect(message.first).to be_a Message 
+      message = Message.all
+
+      expect(message.first).to be_a Message
       expect(message.first.message).to eq 'What an amazing castle!'
     end
   end
