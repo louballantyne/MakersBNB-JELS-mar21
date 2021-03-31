@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sinatra'
 require 'sinatra/flash'
 require './lib/database_connection'
@@ -8,8 +10,7 @@ require './lib/message'
 require './lib/availability'
 
 class MakersBnb < Sinatra::Base
-
-  enable :sessions , :method_override
+  enable :sessions, :method_override
   register Sinatra::Flash
 
   before do
@@ -19,9 +20,9 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/' do
+    redirect '/listings'
     erb(:'/listings/index')
   end
-
 
   get '/listings' do
     @listings = Listing.all
@@ -34,11 +35,12 @@ class MakersBnb < Sinatra::Base
 
   post '/users/new' do
     user = User.create(username: params[:username], email: params[:email],
-                password: params[:password], name: params[:name])
-    if user == 1
-      flash[:username_exists_warning] = "Username in use"
-    elsif user == 2
-      flash[:email_warning] = "Email address already registered"
+                       password: params[:password], first_name: params[:first_name], last_name: params[:last_name])
+    case user
+    when 1
+      flash[:username_exists_warning] = 'Username in use'
+    when 2
+      flash[:email_warning] = 'Email address already registered'
     else
       session[:user] = user
       redirect('/')
@@ -52,10 +54,11 @@ class MakersBnb < Sinatra::Base
 
   post '/session/new' do
     user = User.sign_in(username: params[:username], password: params[:password])
-    if user == 1
-      flash[:username_warning] = "Please check your username"
-    elsif user == 2
-      flash[:password_warning] = "Please check your password"
+    case user
+    when 1
+      flash[:username_warning] = 'Please check your username'
+    when 2
+      flash[:password_warning] = 'Please check your password'
     else
       session[:user] = user
       redirect('/')
@@ -74,9 +77,9 @@ class MakersBnb < Sinatra::Base
 
   post '/listing' do
     listing = Listing.create(name: params[:name], country: params[:country], city: params[:city],
-                   sleeps: params[:sleeps], bedrooms: params[:bedrooms],
-                   bathrooms: params[:bathrooms], description: params[:description],
-                   type: params[:type], user_id: @user.user_id)
+                             sleeps: params[:sleeps], bedrooms: params[:bedrooms],
+                             bathrooms: params[:bathrooms], description: params[:description],
+                             type: params[:type], user_id: @user.user_id)
     redirect("/listing/#{listing.listing_id}")
   end
 
@@ -86,7 +89,6 @@ class MakersBnb < Sinatra::Base
   end
 
   patch '/listing/:id' do
-    p params
     @listing = Listing.edit(listing_id: params[:id], name: params[:name], country: params[:country],
                             city: params[:city], sleeps: params[:sleeps], bedrooms: params[:bedrooms],
                             bathrooms: params[:bathrooms], description: params[:description],
@@ -95,7 +97,7 @@ class MakersBnb < Sinatra::Base
   end
 
   delete '/listing/:id' do
-    # Listing.delete(params[:id])
+    Listing.delete(params[:id])
     redirect('/')
   end
 
@@ -104,5 +106,5 @@ class MakersBnb < Sinatra::Base
     redirect('/')
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

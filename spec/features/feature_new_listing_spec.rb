@@ -1,9 +1,11 @@
-feature 'new' do 
-  scenario 'you can add a new listing' do 
+# frozen_string_literal: true
+
+feature 'new' do
+  scenario 'you can add a new listing' do
     visit '/'
     click_on 'Sign up'
     # FIRST NAME IS RENAMED TO NAME TEMPORARILY
-    fill_in('name', with: 'Theodore')
+    fill_in('first_name', with: 'Theodore')
     fill_in('last_name', with: 'Humpernickle')
     fill_in('username', with: 'ttotheh')
     fill_in('email', with: 'theodore@humpernickle.com')
@@ -20,5 +22,5 @@ feature 'new' do
     expect(page).to have_content 'Bathrooms'
     expect(page).to have_content 'Description'
     expect(page).to have_content 'Type'
-  end 
-end 
+  end
+end

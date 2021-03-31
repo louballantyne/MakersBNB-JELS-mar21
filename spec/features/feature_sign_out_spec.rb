@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'sign out' do
   scenario 'A user signs in and then signs out' do
     visit '/'

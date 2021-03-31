@@ -1,34 +1,38 @@
+# frozen_string_literal: true
+
 require 'bcrypt'
 
 class User
+  attr_reader :user_id, :username, :email, :password, :first_name, :last_name
 
-  attr_reader :user_id, :username, :email, :password, :name
-
-  def initialize(user_id:, username:, email:, password:, name:)
+  def initialize(user_id:, username:, email:, password:, first_name:, last_name:)
     @user_id = user_id
     @username = username
     @email = email
     @password = password
-    @name = name
+    @first_name = first_name
+    @last_name = last_name
   end
 
   def self.all
-    result = DatabaseConnection.query("SELECT * FROM users")
+    result = DatabaseConnection.query('SELECT * FROM users')
     result.map do |user|
-      User.new(user_id: result[0]['user_id'], username: result[0]['username'],
-        email: result[0]['email'], password: result[0]['password'], name: result[0]['name'])
+      User.new(user_id: user['user_id'], username: user['username'],
+               email: user['email'], password: user['password'], first_name: user['first_name'], last_name: user['last_name'])
     end
   end
 
-  def self.create(username:, email:, password:, name:)
+  def self.create(username:, email:, password:, first_name:, last_name:)
     return 1 if username_exist?(username) == true
     return 2 if email_exist?(email) == true
 
     encrypted_password = BCrypt::Password.create(password)
-    result = DatabaseConnection.query("INSERT INTO users (username, email, password, name)
-    VALUES('#{username}', '#{email}', '#{encrypted_password}', '#{name}') RETURNING user_id, username, email, password, name;")
+    result = DatabaseConnection.query("INSERT INTO users (username, email, password, first_name, last_name)
+    VALUES('#{username}', '#{email}', '#{encrypted_password}', '#{first_name}', '#{last_name}')
+    RETURNING user_id, username, email, password, first_name, last_name;")
     User.new(user_id: result[0]['user_id'], username: result[0]['username'],
-      email: result[0]['email'], password: result[0]['password'], name: result[0]['name'])
+             email: result[0]['email'], password: result[0]['password'], first_name: result[0]['first_name'],
+             last_name: result[0]['last_name'])
   end
 
   def self.username_exist?(username)
@@ -46,7 +50,8 @@ class User
 
     result = DatabaseConnection.query("SELECT * FROM users WHERE user_id = '#{id}';")
     User.new(user_id: result[0]['user_id'], username: result[0]['username'],
-    email: result[0]['email'], password: result[0]['password'], name: result[0]['name'])
+             email: result[0]['email'], password: result[0]['password'],
+             first_name: result[0]['first_name'], last_name: result[0]['last_name'])
   end
 
   def self.sign_in(username:, password:)
@@ -57,6 +62,7 @@ class User
     return 2 unless BCrypt::Password.new(result[0]['password']) == password
 
     User.new(user_id: result[0]['user_id'], username: result[0]['username'],
-      email: result[0]['email'], password: result[0]['password'], name: result[0]['name'])
+             email: result[0]['email'], password: result[0]['password'],
+             first_name: result[0]['first_name'], last_name: result[0]['last_name'])
   end
 end

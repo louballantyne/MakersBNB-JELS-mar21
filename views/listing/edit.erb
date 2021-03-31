@@ -1,5 +1,5 @@
 <body>
-  <form action='/listing/<%=@listing.listing_id%>' method='post'>
+  <form action='/listing/<%= @listing.listing_id %>' method='post'>
     <input type='hidden' name='_method' value='patch'>
     <label for='name'>Name:</label> <input type='text' name='name'>
     <label for='country'>Country:</label> <input type='text' name='country'>

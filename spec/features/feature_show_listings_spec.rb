@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'Show listings' do
   scenario 'it displays listings when the user navigates to the homepage' do
     visit '/'
