@@ -63,20 +63,20 @@ class MakersBnb < Sinatra::Base
     redirect('/session/new')
   end
 
+  get '/listing/new' do
+    erb(:'/listing/new')
+  end
+
   get '/listing/:id' do
     @listing = Listing.find(params[:id])
     erb(:"/listing/index")
   end
 
-  get '/listing/new' do
-    erb(:'/listing/new')
-  end
-
-  post '/listing/new' do
-    Listing.create(name: params[:name], country: params[:country], city: params[:city],
+  post '/listing' do
+    listing = Listing.create(name: params[:name], country: params[:country], city: params[:city],
                    sleeps: params[:sleeps], bedrooms: params[:bedrooms],
                    bathrooms: params[:bathrooms], description: params[:description],
-                   type: params[:type], user_id: params[:user_id])
+                   type: params[:type], user_id: @user.user_id)
     redirect("/listing/#{listing.listing_id}")
   end
 
@@ -93,7 +93,7 @@ class MakersBnb < Sinatra::Base
     redirect("/listing/#{@listing.listing_id}")
   end
 
-  delete '/listing/:id/delete' do
+  delete '/listing/:id' do
     # Listing.delete(params[:id])
     redirect('/')
   end
