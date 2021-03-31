@@ -23,7 +23,7 @@ feature 'sign up' do
     click_on 'Submit'
 
     expect(page).to have_text 'Theodore'
-    expect(page).to have_text 'Sign out'
-    expect(page).to have_text 'Add listing'
+    expect(page).to have_button 'Sign out'
+    expect(page).to have_button 'Add listing'
   end
 end
