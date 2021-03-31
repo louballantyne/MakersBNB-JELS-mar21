@@ -14,7 +14,8 @@ class MakersBnb < Sinatra::Base
 
   before do
     check_env
-    @user = User.find(session[:user_id])
+    @listings = Listing.all
+    @user = session[:user]
   end
 
   get '/' do
@@ -23,7 +24,6 @@ class MakersBnb < Sinatra::Base
 
 
   get '/listings' do
-    @user = User.find(session[:user_id])
     @listings = Listing.all
     erb(:'/listings/index')
   end
@@ -40,7 +40,7 @@ class MakersBnb < Sinatra::Base
     elsif user == 2
       flash[:email_warning] = "Email address already registered"
     else
-      session[:user_id] = user.user_id
+      session[:user] = user
       redirect('/')
     end
     redirect('/users/new')
@@ -57,7 +57,7 @@ class MakersBnb < Sinatra::Base
     elsif user == 2
       flash[:password_warning] = "Please check your password"
     else
-      session[:user_id] = user.user_id
+      session[:user] = user
       redirect('/')
     end
     redirect('/session/new')
@@ -86,8 +86,9 @@ class MakersBnb < Sinatra::Base
   end
 
   patch '/listing/:id' do
+    p params
     @listing = Listing.edit(listing_id: params[:id], name: params[:name], country: params[:country],
-                            city: params[:city], sleeps: params[:sleep], bedrooms: params[:bedrooms],
+                            city: params[:city], sleeps: params[:sleeps], bedrooms: params[:bedrooms],
                             bathrooms: params[:bathrooms], description: params[:description],
                             type: params[:type])
     redirect("/listing/#{@listing.listing_id}")

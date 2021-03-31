@@ -1,6 +1,6 @@
 
 <body>
-  <% if @user == nil %>
+  <% if !@user %>
   <form action='/users/new' method='get'>
     <input type='submit' value='Sign up'>
   </form>
@@ -19,12 +19,12 @@
 
   <div class='listing_preview'>
     <ul>
-      <% Listing.all.each do |listing| %>
+      <% @listings.each do |listing| %>
         <li>
           <a href='/listing/<%= listing.listing_id %>' >
             <%=listing.name %><br>
             <%=listing.city %>, <%=listing.country %><br>
-            <%=listing.type %>Sleeps <%=listing.sleeps %>, <%=listing.bedrooms %> bedrooms, <%=listing.bathrooms %> bathrooms.<br>
+            <%=listing.type %>: Sleeps <%=listing.sleeps %>, <%=listing.bedrooms %> bedrooms, <%=listing.bathrooms %> bathrooms.<br>
             <%=listing.description %>
           </a>
         </li>
