@@ -21,11 +21,24 @@ class User
   end
 
   def self.create(username:, email:, password:, name:)
+    return 1 if username_exist?(username) == true
+    return 2 if email_exist?(email) == true
+
     encrypted_password = BCrypt::Password.create(password)
-    result = DatabaseConnection.query("INSERT INTO users(username, email, password, name)
+    result = DatabaseConnection.query("INSERT INTO users (username, email, password, name)
     VALUES('#{username}', '#{email}', '#{encrypted_password}', '#{name}') RETURNING user_id, username, email, password, name;")
     User.new(user_id: result[0]['user_id'], username: result[0]['username'],
       email: result[0]['email'], password: result[0]['password'], name: result[0]['name'])
+  end
+
+  def self.username_exist?(username)
+    db_search = DatabaseConnection.query("SELECT * FROM users WHERE username = '#{username}';")
+    db_search.any?
+  end
+
+  def self.email_exist?(email)
+    db_search = DatabaseConnection.query("SELECT * FROM users WHERE email = '#{email}';")
+    db_search.any?
   end
 
   def self.find(id)

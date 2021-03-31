@@ -35,8 +35,15 @@ class MakersBnb < Sinatra::Base
   post '/users/new' do
     user = User.create(username: params[:username], email: params[:email],
                 password: params[:password], name: params[:name])
-    session[:user_id] = user.user_id
-    redirect('/')
+    if user == 1
+      flash[:username_exists_warning] = "Username in use"
+    elsif user == 2
+      flash[:email_warning] = "Email address already registered"
+    else
+      session[:user_id] = user.user_id
+      redirect('/')
+    end
+    redirect('/users/new')
   end
 
   get '/session/new' do

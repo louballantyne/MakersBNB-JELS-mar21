@@ -23,7 +23,22 @@ feature 'sign up' do
     click_on 'Submit'
 
     expect(page).to have_text 'Theodore'
-    expect(page).to have_text 'Sign out'
-    expect(page).to have_text 'Add listing'
+    expect(page).to have_button 'Sign out'
+    expect(page).to have_button 'Add listing'
+  end
+  scenario 'A user tries to sign up but their username is already in use' do
+    User.create(username: 'poshhouseperson', email: 'poshhouseperson@notadomain.com', password: 'password1', name: 'Isabel Stephenson')
+    visit '/'
+    click_on 'Sign up'
+# FIRST NAME IS RENAMED TO NAME TEMPORARILY
+    fill_in('name', with: 'Theodore')
+    fill_in('last_name', with: 'Humpernickle')
+    fill_in('username', with: 'poshhouseperson')
+    fill_in('email', with: 'theodore@humpernickle.com')
+    fill_in('password', with: 'ilovesweeties')
+    fill_in('confirm', with: 'ilovesweeties')
+    click_on 'Submit'
+
+    expect(page).to have_text 'Username in use'
   end
 end
