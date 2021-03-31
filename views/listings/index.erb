@@ -1,16 +1,34 @@
 <body>
+  <% if @user == nil %>
   <form action='/users/new' method='get'>
     <input type='submit' value='Sign up'>
   </form>
   <form action='/session/new'>
     <input type='submit' value='Sign in'>
   </form>
-
-  <% Listing.all.each do |listing| %>
-    <%=listing.name %><br><
-    <%=listing.city %>, <%=listing.country %><br>
-    <%=listing.type %>Sleeps <%=listing.sleeps %>, <%=listing.bedrooms %> bedrooms, <%=listing.bathrooms %> bathrooms.<br>
-    <%=listing.description %>
+  <% else %>
+    <%= @user.name %>
+    <form action='/'>
+      <input type='submit' value='Sign out'>
+    </form>
+    <form action='/listing/new' method='post'>
+      <input type='submit' value='Add listing'>
+    </form>
   <% end %>
+
+  <div class='listing_preview'>
+    <ul>
+      <% Listing.all.each do |listing| %>
+        <li>
+          <a href='/listing/<%= listing.listing_id %>' >
+            <%=listing.name %><br>
+            <%=listing.city %>, <%=listing.country %><br>
+            <%=listing.type %>Sleeps <%=listing.sleeps %>, <%=listing.bedrooms %> bedrooms, <%=listing.bathrooms %> bathrooms.<br>
+            <%=listing.description %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
 </body>
