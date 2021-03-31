@@ -8,9 +8,16 @@
   <%= @listing.bathrooms %>
   <%= @listing.type %>
 
-  <% if @user = User.find(@listing.user_id) %>
+  <% if @user == User.find(@listing.user_id) %>
     <form action='/listing/<%= @listing.listing_id %>/edit' >
       <input type='submit' value='Edit'>
     </form>
   <% end %>
+
+  <%if @user.user_id == @listing.user_id%>
+    <form action='/listing/<%=@listing.listing_id%>/delete'>
+      <input type='hidden' name='_method' value='delete'>
+      <input type='submit' value='Delete listing'>
+    </form>
+  <%end%>
 </body>

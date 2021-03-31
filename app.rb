@@ -35,8 +35,15 @@ class MakersBnb < Sinatra::Base
   post '/users/new' do
     user = User.create(username: params[:username], email: params[:email],
                 password: params[:password], name: params[:name])
-    session[:user_id] = user.user_id
-    redirect('/')
+    if user == 1
+      flash[:username_exists_warning] = "Username in use"
+    elsif user == 2
+      flash[:email_warning] = "Email address already registered"
+    else
+      session[:user_id] = user.user_id
+      redirect('/')
+    end
+    redirect('/users/new')
   end
 
   get '/session/new' do
@@ -45,8 +52,15 @@ class MakersBnb < Sinatra::Base
 
   post '/session/new' do
     user = User.sign_in(username: params[:username], password: params[:password])
-    session[:user_id] = user.user_id
-    redirect('/')
+    if user == 1
+      flash[:username_warning] = "Please check your username"
+    elsif user == 2
+      flash[:password_warning] = "Please check your password"
+    else
+      session[:user_id] = user.user_id
+      redirect('/')
+    end
+    redirect('/session/new')
   end
 
   get '/listing/:id' do
@@ -79,9 +93,13 @@ class MakersBnb < Sinatra::Base
     redirect("/listing/#{@listing.listing_id}")
   end
 
-  delete '/session/end' do
-    #sinatra-flash??
-    sessions.clear
+  delete '/listing/:id/delete' do
+    # Listing.delete(params[:id])
+    redirect('/')
+  end
+
+  post '/session/end' do
+    session.clear
     redirect('/')
   end
 

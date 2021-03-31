@@ -1,3 +1,4 @@
+
 <body>
   <% if @user == nil %>
   <form action='/users/new' method='get'>
@@ -8,7 +9,7 @@
   </form>
   <% else %>
     <%= @user.name %>
-    <form action='/session/end'>
+    <form action='/session/end' method='post'>
       <input type='submit' value='Sign out'>
     </form>
     <form action='/listing/new' method='get'>
