@@ -9,16 +9,16 @@ feature 'new' do
     fill_in('email', with: 'theodore@humpernickle.com')
     fill_in('password', with: 'ilovesweeties')
     fill_in('confirm', with: 'ilovesweeties')
-    click_on 'Submit'
-    click_on 'Add listing'
+    click_button 'Submit'
+    click_button 'Add listing'
 
-    expect(page).to have_content 'name'
-    expect(page).to have_content 'city'
-    expect(page).to have_content 'county'
-    expect(page).to have_content 'sleeps'
-    expect(page).to have_content 'bedrooms'
-    expect(page).to have_content 'bathrooms'
-    expect(page).to have_content 'description'
-    expect(page).to have_content 'type'
+    expect(page).to have_content 'Name'
+    expect(page).to have_content 'City'
+    expect(page).to have_content 'Country'
+    expect(page).to have_content 'Sleeps'
+    expect(page).to have_content 'Bedrooms'
+    expect(page).to have_content 'Bathrooms'
+    expect(page).to have_content 'Description'
+    expect(page).to have_content 'Type'
   end 
 end 

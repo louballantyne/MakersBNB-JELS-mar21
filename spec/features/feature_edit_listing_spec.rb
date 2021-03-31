@@ -9,16 +9,16 @@ feature 'edit' do
         fill_in('email', with: 'theodore@humpernickle.com')
         fill_in('password', with: 'ilovesweeties')
         fill_in('confirm', with: 'ilovesweeties')
-        click_on 'Submit'
-        click_on 'Add listing'
+        click_button 'Submit'
+        click_button 'Add listing'
         fill_in('name', with: 'Pretty house')
         fill_in('sleeps', with: '2')
         fill_in('bedrooms', with: '1')
         fill_in('bathrooms', with: '2')
         fill_in('description', with: 'This is a pretty house')
         select('House', :from => 'type')
-        click_on 'Submit'
-        click_on 'Edit'
+        click_button 'Submit'
+        click_button 'Edit'
 
         expect(page).to have_content 'Name'
         expect(page).to have_content 'Sleeps'
@@ -26,7 +26,6 @@ feature 'edit' do
         expect(page).to have_content 'Bathrooms'
         expect(page).to have_content 'Description'
         expect(page).to have_content 'Type'
-        expect(page).to have_content 'Submit'
     end
 
 end

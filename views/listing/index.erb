@@ -8,13 +8,15 @@
   <%= @listing.bathrooms %>
   <%= @listing.type %>
 
-  <%if @user.user_id == @listing.user_id%>
-    <form action='/listing/<%= @listing.listing_id %>/edit' >
-      <input type='submit' value='Edit'>
-    </form>
-    <form action='/listing/<%=@listing.listing_id%>'>
-      <input type='hidden' name='_method' value='delete'>
-      <input type='submit' value='Delete listing'>
-    </form>
+  <%if @user%>
+    <%if @user.user_id == @listing.user_id%>
+      <form action='/listing/<%= @listing.listing_id %>/edit' >
+        <input type='submit' value='Edit'>
+      </form>
+      <form action='/listing/<%=@listing.listing_id%>'>
+        <input type='hidden' name='_method' value='delete'>
+        <input type='submit' value='Delete listing'>
+      </form>
+    <%end%>
   <%end%>
 </body>
