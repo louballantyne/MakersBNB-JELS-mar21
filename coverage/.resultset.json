@@ -114,6 +114,21 @@
           null
         ]
       },
+      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_sign_out_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_sign_up_spec.rb": {
         "lines": [
           1,
@@ -255,6 +270,6 @@
         ]
       }
     },
-    "timestamp": 1617187910
+    "timestamp": 1617188922
   }
 }
