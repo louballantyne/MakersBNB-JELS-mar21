@@ -22,7 +22,6 @@ class MakersBnb < Sinatra::Base
     erb(:'/listings/index')
   end
 
-
   get '/listings' do
     @listings = Listing.all
     erb(:'/listings/index')
@@ -34,7 +33,7 @@ class MakersBnb < Sinatra::Base
 
   post '/users/new' do
     user = User.create(username: params[:username], email: params[:email],
-                password: params[:password], name: params[:name])
+                password: params[:password], first_name: params[:first_name], last_name: params[:last_name])
     if user == 1
       flash[:username_exists_warning] = "Username in use"
     elsif user == 2

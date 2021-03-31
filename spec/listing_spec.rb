@@ -1,4 +1,4 @@
-require 'listings'
+require 'listing'
 
 describe Listing do
   describe '.all' do
