@@ -4,7 +4,7 @@ require './lib/database_connection'
 require './lib/database_connection_setup'
 require './lib/user'
 require './lib/listings'
-require './lib/comment'
+require './lib/message'
 require './lib/availability'
 
 class MakersBnb < Sinatra::Base
