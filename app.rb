@@ -76,5 +76,11 @@ class MakersBnb < Sinatra::Base
     redirect("/listing/#{@listing.listing_id}")
   end
 
+  delete '/session/end' do
+    #sinatra-flash??
+    sessions.clear
+    redirect('/')
+  end
+
   run! if app_file == $0
 end
