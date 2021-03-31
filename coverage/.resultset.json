@@ -26,27 +26,18 @@
           null
         ]
       },
-      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/comment_spec.rb": {
+      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/features/feature_delete_listing_spec.rb": {
         "lines": [
           1,
-          null,
           1,
           1,
           1,
           1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
           1,
           1,
           1,
-          null,
           1,
           1,
-          null,
           null,
           null
         ]
@@ -124,10 +115,10 @@
           null,
           1,
           null,
-          1,
-          1,
-          1,
-          1,
+          0,
+          0,
+          0,
+          0,
           null,
           1,
           1,
@@ -172,6 +163,21 @@
       },
       "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/features/feature_sign_in_spec.rb": {
         "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/features/feature_sign_out_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -258,6 +264,31 @@
           null
         ]
       },
+      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/message_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/user_spec.rb": {
         "lines": [
           1,
@@ -301,13 +332,13 @@
           1,
           1,
           null,
-          0,
+          1,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1617189610
+    "timestamp": 1617198961
   }
 }

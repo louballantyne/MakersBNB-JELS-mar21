@@ -24,7 +24,7 @@ CREATE TABLE availability (id SERIAL PRIMARY KEY,
                            FOREIGN KEY(listing_id) REFERENCES listings (listing_id) 
                            ON DELETE CASCADE);
 
-CREATE TABLE message (message_id SERIAL PRIMARY KEY, 
+CREATE TABLE messages (message_id SERIAL PRIMARY KEY, 
                       listing_id INTEGER, 
                        user_id INTEGER, 
                        message VARCHAR(250), 
@@ -43,7 +43,7 @@ CREATE TABLE bookings (booking_id SERIAL PRIMARY KEY,
                         FOREIGN KEY(user_id) REFERENCES users (user_id)
                         ON DELETE CASCADE);
 
-CREATE TABLE rating (rating_id SERIAL PRIMARY KEY,
+CREATE TABLE ratings (rating_id SERIAL PRIMARY KEY,
                       booking_id INTEGER,
                       review VARCHAR(60),
-                      FOREIGN KEY(booking_id) REFERENCES bookings (booking_id))
+                      FOREIGN KEY(booking_id) REFERENCES bookings (booking_id));
