@@ -42,7 +42,7 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/session/new' do
-    # user = User.sign_in(username: params[:username], password: params[:password])
+    user = User.sign_in(username: params[:username], password: params[:password])
     session[:user_id] = user.user_id
     redirect('/')
   end

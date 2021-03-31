@@ -30,13 +30,13 @@ class User
 
   def self.find(id)
     return unless id
-    
+
     result = DatabaseConnection.query("SELECT * FROM users WHERE user_id = '#{id}';")
     User.new(user_id: result[0]['user_id'], username: result[0]['username'],
     email: result[0]['email'], password: result[0]['password'], name: result[0]['name'])
   end
 
-  def self.sign_in(username, password)
+  def self.sign_in(username:, password:)
     result = DatabaseConnection.query("SELECT * FROM users WHERE username = '#{username}';")
     return unless result.any?
 
