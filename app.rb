@@ -93,6 +93,11 @@ class MakersBnb < Sinatra::Base
     redirect("/listing/#{@listing.listing_id}")
   end
 
+  delete '/listing/:id/delete' do
+    # Listing.delete(params[:id])
+    redirect('/')
+  end
+
   post '/session/end' do
     session.clear
     redirect('/')
