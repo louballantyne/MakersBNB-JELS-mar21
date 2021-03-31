@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sinatra/flash'
 require './lib/database_connection'
 require './lib/database_connection_setup'
 require './lib/user'
@@ -9,6 +10,7 @@ require './lib/availability'
 class MakersBnb < Sinatra::Base
 
   enable :sessions , :method_override
+  register Sinatra::Flash
 
   before do
     check_env
