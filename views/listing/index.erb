@@ -12,7 +12,7 @@
     <form action='/listing/<%= @listing.listing_id %>/edit' >
       <input type='submit' value='Edit'>
     </form>
-    <form action='/listing/<%=@listing.listing_id%>/delete'>
+    <form action='/listing/<%=@listing.listing_id%>'>
       <input type='hidden' name='_method' value='delete'>
       <input type='submit' value='Delete listing'>
     </form>
