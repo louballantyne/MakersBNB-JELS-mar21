@@ -1,0 +1,11 @@
+
+<% Message.all(@user.user_id).each do |message| %>
+
+  Listing name: <%= Listing.find(message.listing_id).name %>
+  <%= message.timestamp %>  <br>
+  <%= User.find(message.user_id).username %> wrote:
+  <%= message.message %><br><br>
+  <form action='/messages/<%= message.user_id %>/new'>
+    <input type='submit' value='Reply'>
+  </form>
+<% end %>

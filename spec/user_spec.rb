@@ -7,15 +7,15 @@ describe User do
     it 'returns an array of all users' do
       user = User.all
 
-      expect(user.last).to be_a User
-      expect(user.last.first_name).to eq 'Isabel'
+      expect(user.first).to be_a User
+      expect(user.first.first_name).to eq 'Isabel'
     end
   end
 
   describe '.create' do
     it 'creates a new user on the database and returns it as User object' do
-      new_user = User.create(username: 'blahblah', email: 'blahblah@notadomain.com', 
-                             password: 'password1', confirm: 'password1', 
+      new_user = User.create(username: 'blahblah', email: 'blahblah@notadomain.com',
+                             password: 'password1', confirm: 'password1',
                              first_name: 'Isabel', last_name: 'Stephenson')
 
       expect(new_user).to be_a(User)
@@ -25,22 +25,22 @@ describe User do
     it 'hashes the password using BCrypt' do
       expect(BCrypt::Password).to receive(:create).with('password1')
 
-      User.create(username: 'cheaphouseperson', email: 'cheaphouseperson@notadomain.com', 
+      User.create(username: 'cheaperhouseperson', email: 'cheaperhouseperson@notadomain.com',
                   password: 'password1', confirm: 'password1',
                   first_name: 'Isabel', last_name: 'Stephenson')
     end
 
     it 'when the two passwords that the user has entered are the same a user is created' do
-      new_user = User.create(username: 'blahblah', email: 'blahblah@notadomain.com', 
-                             password: 'password1', confirm: 'password1', 
+      new_user = User.create(username: 'blahblah', email: 'blahblah@notadomain.com',
+                             password: 'password1', confirm: 'password1',
                              first_name: 'Isabel', last_name: 'Stephenson')
 
       expect(new_user).to be_a(User)
     end
 
     it 'when the two passwords that the user enters are different it returns a 3' do
-      new_user = User.create(username: 'blahblah', email: 'blahblah@notadomain.com', 
-                             password: 'password1', confirm: 'password2', 
+      new_user = User.create(username: 'blahblah', email: 'blahblah@notadomain.com',
+                             password: 'password1', confirm: 'password2',
                              first_name: 'Isabel', last_name: 'Stephenson')
 
       expect(new_user).to eq(3)
