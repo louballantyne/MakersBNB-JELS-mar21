@@ -16,8 +16,8 @@
       <form action='/listing/<%= @listing.listing_id %>/edit' >
         <input type='submit' value='Edit'>
       </form>
-      <form action='/listing/<%= @user_id %>/availability' >#
-      <input type='submit' value='Add avalability'>
+      <form action='/listing/<%= @listing.listing_id %>/availability' >#
+      <input type='submit' value='Add availability'>
       </form>
       <form action='/listing/<%=@listing.listing_id%>' method='post'>
         <input type='hidden' name='_method' value='delete'>
@@ -26,14 +26,3 @@
     <%end%>
   <%end%>
 </body>
-
-
-<form action='/listing/<%= @listing.listing_id %>' method= 'post'>
-  <label for='start_date'>Start date (DD/MM/YYYY): </label><input type='text' name='startdate'> 
-  <label for='end_date'>End date (DD/MM/YYYY): </label><input type='text' name='enddate'> 
-</form>
-
-array.each do |date|
-  availability.create(date)
-
-end

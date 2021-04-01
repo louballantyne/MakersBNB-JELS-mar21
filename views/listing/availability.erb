@@ -1,0 +1,15 @@
+
+<body>
+    <form action='/listing/<%= @listing.listing_id %>/availability' method= 'post'>
+        <label for='start_date'>Start date (DD/MM/YYYY): </label><input type='text' name='start_date'> 
+        <label for='end_date'>End date (DD/MM/YYYY): </label><input type='text' name='end_date'> 
+        <input type='submit' value='Submit'>
+    </form>
+</body>
+
+
+
+#array.each do |date|
+#availability.create(date)
+
+#end
