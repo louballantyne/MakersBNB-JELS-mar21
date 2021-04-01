@@ -7,7 +7,8 @@ require_relative '../lib/listing'
 def reset_table
   connection = PG.connect(dbname: 'makers_bnb_test')
   connection.exec('TRUNCATE TABLE users, listings, availability, messages, bookings, ratings RESTART IDENTITY;')
-  User.create(username: 'poshhouseperson', email: 'poshhouseperson@notadomain.com', password: 'password1',
+  User.create(username: 'poshhouseperson', email: 'poshhouseperson@notadomain.com', 
+              password: 'password1', confirm: 'password1',
               first_name: 'Isabel', last_name: 'Stephenson')
 
   Listing.create(name: 'poshhouse', country: 'United Kingdom', city: 'London', sleeps: '6', bedrooms: '4',

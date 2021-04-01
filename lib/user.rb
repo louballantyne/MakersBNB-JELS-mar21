@@ -22,9 +22,10 @@ class User
     end
   end
 
-  def self.create(username:, email:, password:, first_name:, last_name:)
+  def self.create(username:, email:, password:, confirm:, first_name:, last_name:)
     return 1 if username_exist?(username) == true
     return 2 if email_exist?(email) == true
+    return 3 if password != confirm
 
     encrypted_password = BCrypt::Password.create(password)
     result = DatabaseConnection.query("INSERT INTO users (username, email, password, first_name, last_name)

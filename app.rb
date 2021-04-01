@@ -34,13 +34,16 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/users/new' do
-    user = User.create(username: params[:username], email: params[:email],
-                       password: params[:password], first_name: params[:first_name], last_name: params[:last_name])
+    user = User.create(username: params[:username], email: params[:email], 
+                       password: params[:password], confirm: params[:confirm], 
+                       first_name: params[:first_name], last_name: params[:last_name])
     case user
     when 1
       flash[:username_exists_warning] = 'Username in use'
     when 2
       flash[:email_warning] = 'Email address already registered'
+    when 3
+      flash[:password_match] = 'The passwords entered do not match'
     else
       session[:user] = user
       redirect('/')
