@@ -26,7 +26,8 @@
     <%end%>
     <p>
       <% unless @user.user_id == @listing.user_id %>
-        <form action='/messages/<%= @listing.listing_id %>/new'>
+        <form action='/messages/<%= @listing.user_id %>/new'>
+          <% session[:listing_id] = @listing.listing_id %>
           <input type='submit' value='Message user'>
         </form>
       <% end %>

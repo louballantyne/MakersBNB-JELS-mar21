@@ -130,12 +130,15 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/messages/:id/new' do
-    session[:listing_id] = params[:id]
+    session[:recipient_id] = params[:id]
     erb(:'messages/new')
   end
 
   post '/messages/:id/send' do
-    success = Message.create(listing_id: session[:listing_id], user_id: @user.user_id, message: params[:message])
+    if session[:listing_id] == nil
+      session[:listing_id] = "0"
+    end
+      success = Message.create(listing_id: session[:listing_id], sender_id: @user.user_id, recipient_id: session[:recipient_id], message: params[:message])
     if success
       flash[:message_sent] = 'Message sent!'
     else
