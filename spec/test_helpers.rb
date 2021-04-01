@@ -22,6 +22,8 @@ def reset_table
   Listing.create(name: 'cheaphouse', country: 'United Kingdom', city: 'London', sleeps: '2', bedrooms: '1',
                 bathrooms: '1', description: 'blah blah a dive', type: 'small dive', price: '10', user_id: '2')
   Message.create(listing_id: '1', user_id: '2', message: 'Your house is a lot nicer than mine')
+  Availability.create(listing_id: '2', dates: '2021-04-03')
+  Availability.create(listing_id: '2', dates: '2021-04-04')
 
   connection.exec("INSERT INTO availability (listing_id, dates) VALUES('1','2021-04-03');")
 

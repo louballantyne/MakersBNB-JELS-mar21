@@ -21,7 +21,8 @@ feature 'availability' do
         click_button 'Submit'
         click_button 'Add availability'
 
-        expect(page).to have_text('Start date (DD/MM/YYYY):', 'End date (DD/MM/YYYY):')
+        expect(page).to have_content('Start date (YYYY-MM-DD):')
+        expect(page).to have_content('End date (YYYY-MM-DD):')
     end
 
 end
