@@ -11,8 +11,8 @@ class Message
     @timestamp = timestamp
   end
 
-  def self.all
-    result = DatabaseConnection.query('SELECT * FROM messages;')
+  def self.all(id)
+    result = DatabaseConnection.query("SELECT * FROM messages WHERE user_id = '#{id}';")
     result.map do |message|
       Message.new(message_id: message['message_id'], listing_id: message['listing_id'], user_id: message['user_id'],
                   message: message['message'], timestamp: message['timestamp'])

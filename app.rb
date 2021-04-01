@@ -109,6 +109,10 @@ class MakersBnb < Sinatra::Base
     redirect('/')
   end
 
+  get '/messages/index' do
+    erb(:'messages/index')
+  end
+
   get '/messages/:id/new' do
     session[:listing_id] = params[:id]
     erb(:'messages/new')

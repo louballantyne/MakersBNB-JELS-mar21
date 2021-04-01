@@ -2,7 +2,7 @@ feature 'send messages' do
   scenario 'A user sends a message to another user about their listing' do
     visit '/'
     click_button 'Sign in'
-    fill_in('username', with: 'poshhouseperson')
+    fill_in('username', with: 'cheaphouseperson')
     fill_in('password', with: 'password1')
     click_button 'Submit'
     first('.listing_preview').click_on 'poshhouse'

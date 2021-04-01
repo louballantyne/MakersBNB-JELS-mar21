@@ -5,7 +5,7 @@ require 'message'
 describe Message do
   describe '.all' do
     it 'returns a list of all messages' do
-      message = Message.all
+      message = Message.all('1')
 
       expect(message.first).to be_a Message
       expect(message.first.message).to eq 'What an amazing castle!'
