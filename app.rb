@@ -79,7 +79,7 @@ class MakersBnb < Sinatra::Base
     listing = Listing.create(name: params[:name], country: params[:country], city: params[:city],
                              sleeps: params[:sleeps], bedrooms: params[:bedrooms],
                              bathrooms: params[:bathrooms], description: params[:description],
-                             type: params[:type], user_id: @user.user_id)
+                             type: params[:type], price: params[:price], user_id: @user.user_id)
     redirect("/listing/#{listing.listing_id}")
   end
 
@@ -92,7 +92,7 @@ class MakersBnb < Sinatra::Base
     @listing = Listing.edit(listing_id: params[:id], name: params[:name], country: params[:country],
                             city: params[:city], sleeps: params[:sleeps], bedrooms: params[:bedrooms],
                             bathrooms: params[:bathrooms], description: params[:description],
-                            type: params[:type])
+                            type: params[:type], price: params[:price])
     redirect("/listing/#{@listing.listing_id}")
   end
 
