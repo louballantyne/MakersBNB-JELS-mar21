@@ -16,6 +16,9 @@
       <form action='/listing/<%= @listing.listing_id %>/edit' >
         <input type='submit' value='Edit'>
       </form>
+      <form action='/listing/<%= @listing.listing_id %>/availability' >#
+      <input type='submit' value='Add availability'>
+      </form>
       <form action='/listing/<%=@listing.listing_id%>' method='post'>
         <input type='hidden' name='_method' value='delete'>
         <input type='submit' value='Delete listing'>

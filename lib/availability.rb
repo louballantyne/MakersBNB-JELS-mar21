@@ -22,4 +22,5 @@ class Availability
     Availability.new(id: result[0]['id'], listing_id: result[0]['listing_id'], 
 dates: result[0]['dates'])
   end
+
 end
