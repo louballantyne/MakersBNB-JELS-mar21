@@ -34,13 +34,16 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/users/new' do
-    user = User.create(username: params[:username], email: params[:email],
-                       password: params[:password], first_name: params[:first_name], last_name: params[:last_name])
+    user = User.create(username: params[:username], email: params[:email], 
+                       password: params[:password], confirm: params[:confirm], 
+                       first_name: params[:first_name], last_name: params[:last_name])
     case user
     when 1
       flash[:username_exists_warning] = 'Username in use'
     when 2
       flash[:email_warning] = 'Email address already registered'
+    when 3
+      flash[:password_match] = 'The passwords entered do not match'
     else
       session[:user] = user
       redirect('/')
@@ -79,7 +82,7 @@ class MakersBnb < Sinatra::Base
     listing = Listing.create(name: params[:name], country: params[:country], city: params[:city],
                              sleeps: params[:sleeps], bedrooms: params[:bedrooms],
                              bathrooms: params[:bathrooms], description: params[:description],
-                             type: params[:type], user_id: @user.user_id)
+                             type: params[:type], price: params[:price], user_id: @user.user_id)
     redirect("/listing/#{listing.listing_id}")
   end
 
@@ -92,7 +95,7 @@ class MakersBnb < Sinatra::Base
     @listing = Listing.edit(listing_id: params[:id], name: params[:name], country: params[:country],
                             city: params[:city], sleeps: params[:sleeps], bedrooms: params[:bedrooms],
                             bathrooms: params[:bathrooms], description: params[:description],
-                            type: params[:type])
+                            type: params[:type], price: params[:price])
     redirect("/listing/#{@listing.listing_id}")
   end
 
