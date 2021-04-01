@@ -26,6 +26,7 @@
       <% @listings.each do |listing| %>
         <li>
           <a href='/listing/<%= listing.listing_id %>' >
+             <img src='ugly_house_1.jpeg' width='300' ><br>
             <%=listing.name %><br>
             <%=listing.city %>, <%=listing.country %><br>
             <%=listing.type %>: Sleeps <%=listing.sleeps %>, <%=listing.bedrooms %> bedrooms, <%=listing.bathrooms %> bathrooms.<br>
