@@ -12,12 +12,12 @@ describe Availability do
     end
   end
 
-  describe '.create' do
-    it 'creats a new row on the database and returns it as a Availability object' do
-      new_availability = Availability.create(listing_id: '1', dates: '2021-04-03')
+  describe '.find' do 
+    it 'finds any available date per listing id' do 
+      find = Availability.find(listing_id: '1')
 
-      expect(new_availability).to be_a(Availability)
-      expect(new_availability.dates).to eq('2021-04-03')
-    end
-  end
+      expect(find.first).to be_a Availability
+      expect(find.first.dates).to eq '2021-04-03' 
+    end 
+  end 
 end

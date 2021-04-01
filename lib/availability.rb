@@ -23,4 +23,11 @@ class Availability
 dates: result[0]['dates'])
   end
 
+  def self.find(listing_id:)
+    result = DatabaseConnection.query("SELECT * FROM availability WHERE listing_id = '#{listing_id}';")
+    result.map do |dates|
+      Availability.new(id: dates['id'], listing_id: dates['listing_id'], dates: dates['dates'])
+    end
+  end 
+
 end

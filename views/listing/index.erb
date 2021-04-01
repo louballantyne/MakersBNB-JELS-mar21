@@ -1,14 +1,17 @@
 <body>
-  <%= @listing.name %>
-  <%= @listing.description %>
-  <%= @listing.country %>
-  <%= @listing.city %>
-  <%= @listing.sleeps %>
-  <%= @listing.bedrooms %>
-  <%= @listing.bathrooms %>
-  <%= @listing.type %>
-  <%= @listing.price %>
+  Title: <%= @listing.name %><br/>
+  Description: <%= @listing.description %><br/>
+  Location: <%= @listing.country %>, <%= @listing.city %><br/><br/>
+  <%= @listing.sleeps %> sleeps <br/>
+  <%= @listing.bedrooms %> bedrooms <br/>
+  <%= @listing.bathrooms %> bathrooms <br/>
+  Type: <%= @listing.type %><br/>
+  Price per night: £<%= @listing.price %><br/><br/>
 
+  <% if !@availability.empty? %>
+    <p> Available from: <%= @availability.first.dates %> </p>
+    <p> Until: <%= @availability.last.dates %> </p>
+  <% end %>
 
   <%if @user%>
     <% if @user.user_id == @listing.user_id %>
@@ -16,7 +19,7 @@
       <form action='/listing/<%= @listing.listing_id %>/edit' >
         <input type='submit' value='Edit'>
       </form>
-      <form action='/listing/<%= @listing.listing_id %>/availability' >#
+      <form action='/listing/<%= @listing.listing_id %>/availability' >
       <input type='submit' value='Add availability'>
       </form>
       <form action='/listing/<%=@listing.listing_id%>' method='post'>

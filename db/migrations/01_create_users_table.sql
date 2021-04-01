@@ -21,9 +21,7 @@ CREATE TABLE listings (listing_id SERIAL PRIMARY KEY,
 
 CREATE TABLE availability (id SERIAL PRIMARY KEY, 
                            listing_id INTEGER, 
-                           dates DATE, 
-                           FOREIGN KEY(listing_id) REFERENCES listings (listing_id) 
-                           ON DELETE CASCADE);
+                           dates DATE);
 
 CREATE TABLE messages (message_id SERIAL PRIMARY KEY, 
                       listing_id INTEGER, 

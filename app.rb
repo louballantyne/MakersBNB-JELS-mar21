@@ -76,6 +76,7 @@ class MakersBnb < Sinatra::Base
 
   get '/listing/:id' do
     @listing = Listing.find(params[:id])
+    @availability = Availability.find(listing_id: @listing.listing_id)
     erb(:"/listing/index")
   end
 
