@@ -21,5 +21,11 @@
         <input type='submit' value='Delete listing'>
       </form>
     <%end%>
+    <p>
+      <% unless @user.user_id == @listing.user_id %>
+        <form action='/messages/<%= @listing.listing_id %>/new'>
+          <input type='submit' value='Message user'>
+        </form>
+      <% end %>
   <%end%>
 </body>

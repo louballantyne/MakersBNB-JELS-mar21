@@ -34,8 +34,8 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/users/new' do
-    user = User.create(username: params[:username], email: params[:email], 
-                       password: params[:password], confirm: params[:confirm], 
+    user = User.create(username: params[:username], email: params[:email],
+                       password: params[:password], confirm: params[:confirm],
                        first_name: params[:first_name], last_name: params[:last_name])
     case user
     when 1
@@ -107,6 +107,21 @@ class MakersBnb < Sinatra::Base
   post '/session/end' do
     session.clear
     redirect('/')
+  end
+
+  get '/messages/:id/new' do
+    session[:listing_id] = params[:id]
+    erb(:'messages/new')
+  end
+
+  post '/messages/:id/send' do
+    success = Message.create(listing_id: session[:listing_id], user_id: @user.user_id, message: params[:message])
+    if success
+      flash[:message_sent] = 'Message sent!'
+    else
+      flash[:message_sent] = 'Message sending failed'
+    end
+    redirect '/'
   end
 
   run! if app_file == $PROGRAM_NAME
