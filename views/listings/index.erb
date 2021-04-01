@@ -24,6 +24,7 @@
   <div class='listing_preview'>
     <ul>
       <% @listings.each do |listing| %>
+      <% next if listing.listing_id == "0"%>
         <li>
           <a href='/listing/<%= listing.listing_id %>' >
             <%=listing.name %><br>

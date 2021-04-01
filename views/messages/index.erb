@@ -1,11 +1,15 @@
 
 <% Message.all(@user.user_id).each do |message| %>
 
+  <%if Listing.find(message.listing_id).name%>
   Listing name: <%= Listing.find(message.listing_id).name %>
+  <%else%>
+  Reply:
+  <%end%>
   <%= message.timestamp %>  <br>
-  <%= User.find(message.user_id).username %> wrote:
+  <%= User.find(message.sender_id).username %> wrote:
   <%= message.message %><br><br>
-  <form action='/messages/<%= message.user_id %>/new'>
+  <form action='/messages/<%= message.sender_id %>/new'>
     <input type='submit' value='Reply'>
   </form>
 <% end %>

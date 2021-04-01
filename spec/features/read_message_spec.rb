@@ -7,6 +7,5 @@ feature 'read messages' do
     click_button 'Submit'
     click_button 'Messages'
     expect(page).to have_text 'What an amazing castle!'
-    expect(page).to have_text '12.06'
   end
 end

@@ -21,11 +21,12 @@ def reset_table
                  user_id: '1')
   Listing.create(name: 'cheaphouse', country: 'United Kingdom', city: 'London', sleeps: '2', bedrooms: '1',
                 bathrooms: '1', description: 'blah blah a dive', type: 'small dive', price: '10', user_id: '2')
-  Message.create(listing_id: '1', user_id: '2', message: 'Your house is a lot nicer than mine')
+
   Availability.create(listing_id: '2', dates: '2021-04-03')
   Availability.create(listing_id: '2', dates: '2021-04-04')
 
-  connection.exec("INSERT INTO availability (listing_id, dates) VALUES('1','2021-04-03');")
+  Message.create(listing_id: '1', sender_id: '2', recipient_id: '1', message: 'Your house is a lot nicer than mine')
+  Message.create(listing_id: '1', sender_id: '2', recipient_id: '1', message: 'What an amazing castle!')
 
-  connection.exec("INSERT INTO messages (listing_id, user_id, message) VALUES ('1', '1', 'What an amazing castle!');")
+  connection.exec("INSERT INTO availability (listing_id, dates) VALUES('1','2021-04-03');")
 end
