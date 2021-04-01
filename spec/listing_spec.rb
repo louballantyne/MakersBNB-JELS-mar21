@@ -12,9 +12,9 @@ describe Listing do
 
   describe '.create' do
     it 'can create a new listing' do
-      new_listing = Listing.create(name: 'shitty appartment', country: 'United Kingdom', city: 'London', sleeps: '3', 
+      new_listing = Listing.create(name: 'shitty appartment', country: 'United Kingdom', city: 'London', sleeps: '3',
                                    bedrooms: '1', bathrooms: '1',
-                                   description: 'At least it is cheap', type: 'appartment', user_id: '1')
+                                   description: 'At least it is cheap', type: 'appartment', price: '50', user_id: '1')
 
       expect(new_listing).to be_a Listing
       expect(new_listing.name).to eq 'shitty appartment'
@@ -33,8 +33,8 @@ describe Listing do
   describe '.edit' do
     it 'can edit a listing' do
       edited = Listing.edit(listing_id: '1', name: 'poshhouse', country: 'United Kingdom', city: 'London',
-                            sleeps: '6', bedrooms: '4', bathrooms: '3', 
-                            description: 'something more sensible', type: 'house')
+                            sleeps: '6', bedrooms: '4', bathrooms: '3',
+                            description: 'something more sensible', type: 'house', price: '50')
 
       expect(edited.description).to eq 'something more sensible'
     end

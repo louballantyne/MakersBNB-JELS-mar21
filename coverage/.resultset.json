@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/availability_spec.rb": {
+      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/availability_spec.rb": {
         "lines": [
           null,
           null,
@@ -28,7 +28,7 @@
           null
         ]
       },
-      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/features/feature_delete_listing_spec.rb": {
+      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_delete_listing_spec.rb": {
         "lines": [
           null,
           null,
@@ -46,7 +46,7 @@
           null
         ]
       },
-      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/features/feature_edit_listing_spec.rb": {
+      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_edit_listing_spec.rb": {
         "lines": [
           null,
           null,
@@ -71,6 +71,109 @@
           1,
           1,
           1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_new_listing_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_show_listing_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_show_listings_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_sign_in_spec.rb": {
+        "lines": [
+          null,
           null,
           1,
           1,
@@ -82,7 +185,24 @@
           null
         ]
       },
-      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/features/feature_new_listing_spec.rb": {
+      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_sign_out_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_sign_up_spec.rb": {
         "lines": [
           null,
           null,
@@ -97,6 +217,8 @@
           1,
           1,
           1,
+          null,
+          1,
           1,
           1,
           null,
@@ -105,6 +227,9 @@
           1,
           1,
           1,
+          1,
+          1,
+          null,
           1,
           1,
           1,
@@ -112,134 +237,8 @@
           null
         ]
       },
-      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/features/feature_show_listing_spec.rb": {
+      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/listing_spec.rb": {
         "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/features/feature_show_listings_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/features/feature_sign_in_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/features/feature_sign_out_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/features/feature_sign_up_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/listing_spec.rb": {
-        "lines": [
-          null,
-          null,
           1,
           null,
           1,
@@ -293,7 +292,7 @@
           null
         ]
       },
-      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/message_spec.rb": {
+      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/message_spec.rb": {
         "lines": [
           null,
           null,
@@ -320,7 +319,7 @@
           null
         ]
       },
-      "/Users/emma/Coding/Makers/makers_bnb/MakersBNB-JELS-mar21/spec/user_spec.rb": {
+      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/user_spec.rb": {
         "lines": [
           null,
           null,
@@ -375,6 +374,6 @@
         ]
       }
     },
-    "timestamp": 1617221846
+    "timestamp": 1617271607
   }
 }

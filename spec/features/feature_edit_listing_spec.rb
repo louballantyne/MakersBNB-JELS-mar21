@@ -18,6 +18,7 @@ feature 'edit' do
     fill_in('bedrooms', with: '1')
     fill_in('bathrooms', with: '2')
     fill_in('description', with: 'This is a pretty house')
+    fill_in('price', with: '50')
     select('House', from: 'type')
     click_button 'Submit'
     click_button 'Edit'
@@ -28,5 +29,7 @@ feature 'edit' do
     expect(page).to have_content 'Bathrooms'
     expect(page).to have_content 'Description'
     expect(page).to have_content 'Type'
+    expect(page).to have_content 'Price'
+
   end
 end

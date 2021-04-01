@@ -19,5 +19,6 @@ feature 'new' do
     expect(page).to have_content 'Bathrooms'
     expect(page).to have_content 'Description'
     expect(page).to have_content 'Type'
-  end 
-end 
+    expect(page).to have_content 'Price'
+  end
+end
