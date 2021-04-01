@@ -106,17 +106,13 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/listing/:id/availability' do
-   
-    a = Date.parse params[:start_date]
-    b = Date.parse params[:end_date]
-    @date_test = (a..b).inject([]){|accum, date| accum << date}
+    start_date = Date.parse(params[:start_date])
+    end_date = Date.parse(params[:end_date])
 
-    p @date_test 
-    # @date_test = (Date.parse(params[:start_date]))…Date.parse(params[:end_date])).to_a
-    
-    #p @date_test
-    #Date.new(params[:start_date], params[:end_date])
-    #DateRange((params[:start_date]...params[:end_date])).every(1.day)
+    array = (start_date..end_date).to_a
+    @listing = Listing.find(params[:id])
+    array.map { |date| Availability.create(listing_id: @listing.listing_id, dates: date) }
+    redirect("/listing/#{@listing.listing_id}")
   end
 
   delete '/listing/:id' do
