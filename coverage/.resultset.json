@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/availability_spec.rb": {
+      "/Users/jackhooper/Documents/Makers/Week Five - (Full Course)/MakersBNB-JELS-mar21/spec/availability_spec.rb": {
         "lines": [
           null,
           null,
@@ -28,7 +28,38 @@
           null
         ]
       },
-      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_delete_listing_spec.rb": {
+      "/Users/jackhooper/Documents/Makers/Week Five - (Full Course)/MakersBNB-JELS-mar21/spec/features/feature_add_availability_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jackhooper/Documents/Makers/Week Five - (Full Course)/MakersBNB-JELS-mar21/spec/features/feature_delete_listing_spec.rb": {
         "lines": [
           null,
           null,
@@ -46,7 +77,7 @@
           null
         ]
       },
-      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_edit_listing_spec.rb": {
+      "/Users/jackhooper/Documents/Makers/Week Five - (Full Course)/MakersBNB-JELS-mar21/spec/features/feature_edit_listing_spec.rb": {
         "lines": [
           null,
           null,
@@ -85,7 +116,7 @@
           null
         ]
       },
-      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_new_listing_spec.rb": {
+      "/Users/jackhooper/Documents/Makers/Week Five - (Full Course)/MakersBNB-JELS-mar21/spec/features/feature_new_listing_spec.rb": {
         "lines": [
           1,
           1,
@@ -113,7 +144,7 @@
           null
         ]
       },
-      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_show_listing_spec.rb": {
+      "/Users/jackhooper/Documents/Makers/Week Five - (Full Course)/MakersBNB-JELS-mar21/spec/features/feature_show_listing_spec.rb": {
         "lines": [
           null,
           null,
@@ -145,7 +176,7 @@
           null
         ]
       },
-      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_show_listings_spec.rb": {
+      "/Users/jackhooper/Documents/Makers/Week Five - (Full Course)/MakersBNB-JELS-mar21/spec/features/feature_show_listings_spec.rb": {
         "lines": [
           null,
           null,
@@ -171,7 +202,7 @@
           null
         ]
       },
-      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_sign_in_spec.rb": {
+      "/Users/jackhooper/Documents/Makers/Week Five - (Full Course)/MakersBNB-JELS-mar21/spec/features/feature_sign_in_spec.rb": {
         "lines": [
           null,
           null,
@@ -185,7 +216,7 @@
           null
         ]
       },
-      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_sign_out_spec.rb": {
+      "/Users/jackhooper/Documents/Makers/Week Five - (Full Course)/MakersBNB-JELS-mar21/spec/features/feature_sign_out_spec.rb": {
         "lines": [
           null,
           null,
@@ -202,7 +233,7 @@
           null
         ]
       },
-      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/features/feature_sign_up_spec.rb": {
+      "/Users/jackhooper/Documents/Makers/Week Five - (Full Course)/MakersBNB-JELS-mar21/spec/features/feature_sign_up_spec.rb": {
         "lines": [
           null,
           null,
@@ -237,7 +268,7 @@
           null
         ]
       },
-      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/listing_spec.rb": {
+      "/Users/jackhooper/Documents/Makers/Week Five - (Full Course)/MakersBNB-JELS-mar21/spec/listing_spec.rb": {
         "lines": [
           1,
           null,
@@ -292,7 +323,7 @@
           null
         ]
       },
-      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/message_spec.rb": {
+      "/Users/jackhooper/Documents/Makers/Week Five - (Full Course)/MakersBNB-JELS-mar21/spec/message_spec.rb": {
         "lines": [
           null,
           null,
@@ -319,7 +350,7 @@
           null
         ]
       },
-      "/Users/lou/Projects/Makers-Work/Week5/MakersBNB-JELS-mar21/spec/user_spec.rb": {
+      "/Users/jackhooper/Documents/Makers/Week Five - (Full Course)/MakersBNB-JELS-mar21/spec/user_spec.rb": {
         "lines": [
           null,
           null,
@@ -340,21 +371,18 @@
           1,
           null,
           null,
-          1,
-          1,
-          null,
           null,
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          null,
           1,
           null,
           null,
           null,
-          null,
-          1,
-          1,
-          1,
           null,
           1,
           1,
@@ -362,8 +390,30 @@
           null,
           null,
           1,
+          null,
+          null,
           1,
           1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
           null,
           1,
           null,
@@ -374,6 +424,6 @@
         ]
       }
     },
-    "timestamp": 1617271607
+    "timestamp": 1617275300
   }
 }

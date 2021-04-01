@@ -8,6 +8,7 @@ require './lib/user'
 require './lib/listing'
 require './lib/message'
 require './lib/availability'
+require 'date'
 
 class MakersBnb < Sinatra::Base
   enable :sessions, :method_override
@@ -96,6 +97,21 @@ class MakersBnb < Sinatra::Base
                             city: params[:city], sleeps: params[:sleeps], bedrooms: params[:bedrooms],
                             bathrooms: params[:bathrooms], description: params[:description],
                             type: params[:type], price: params[:price])
+    redirect("/listing/#{@listing.listing_id}")
+  end
+
+  get '/listing/:id/availability' do
+    @listing = Listing.find(params[:id])
+    erb(:"/listing/availability")
+  end
+
+  post '/listing/:id/availability' do
+    start_date = Date.parse(params[:start_date])
+    end_date = Date.parse(params[:end_date])
+
+    array = (start_date..end_date).to_a
+    @listing = Listing.find(params[:id])
+    array.map { |date| Availability.create(listing_id: @listing.listing_id, dates: date) }
     redirect("/listing/#{@listing.listing_id}")
   end
 
